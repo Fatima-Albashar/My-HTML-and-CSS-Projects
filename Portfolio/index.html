@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #299;
+  padding: 1rem;
+  text-align: center;
+  top: 0;
+  z-index: 999;
+}
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar a:hover {
+  color: #ff9800;
+}
+
+/* Center Image with Filter */
+.center-img {
+  margin-top: 80px;
+  text-align: center;
+}
+.filtered-img {
+  width: 300px;
+  border-radius: 15px;
+  filter: grayscale(50%);
+}
+
+/* Table Styling */
+.table-section {
+  padding: 40px;
+}
+table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+th {
+  background-color: #299;
+  color: white;
+}
+
+/* Text Over Image */
+.text-overlay-image {
+  position: relative;
+color:black;
+  text-align: center;
+}
+.text-overlay-image img {
+  width: 100%;
+  height: auto;
+}
+.text-on-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+color:white;
+  font-size: 2rem;
+  font-weight: bold;
+padding:20px;
+border-radius:25px;
+background-color:rgba(0,0,0,0.7);
+}
+
+/* Two Columns */
+.two-columns {
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+}
+.column {
+  flex: 1;
+  height: 200px;
+  width: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 20px;
+}
+
+/* Paragraph Hover */
+.hover-text {
+  text-align: center;
+  padding: 20px;
+}
+.hover-text p {
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.hover-text p:hover {
+  color: #e91e63;
+}
+
+/* Image Overlay Fade */
+.img-container {
+  position: relative;
+  width: 300px;
+  margin: 40px auto;
+}
+.img-container img {
+  width: 100%;
+  display: block;
+}
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s ease;
+}
+.img-container:hover .fade-overlay {
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Video Section */
+.video-section video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Video with Text Overlay */
+.video-text-overlay {
+  position: relative;
+}
+.bg-video {
+  width: 100%;
+  height: auto;
+}
+.video-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Footer */
+footer {
+  background-color: #299;
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  color: white;
+  font-weight: bold;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #299;
+  box-shadow: 0 0 4px rgba(0, 153, 153, 0.4);
+}
+
+.contact-form button {
+  background-color: #299;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #007777;
+}
+
+
+</style>
+
+</head>
+<body>
+
+  <!-- Fixed Navbar -->
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Centered Image with Filter -->
+  <section class="center-img">
+    <img src="https://st2.depositphotos.com/2931363/6569/i/450/depositphotos_65699901-stock-photo-black-man-keeping-arms-crossed.jpg" alt="Profile Picture" class="filtered-img" />
+  </section>
+
+  <!-- Table Section -->
+  <section class="table-section">
+    <h2>Skills</h2>
+    <table>
+      <tr>
+        <th>Skill</th>
+        <th>Level</th>
+      </tr>
+      <tr>
+        <td>HTML</td>
+        <td>Advanced</td>
+      </tr>
+      <tr>
+        <td>CSS</td>
+        <td>Intermediate</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Text Over Image -->
+  <section class="text-overlay-image">
+    <img src="https://t4.ftcdn.net/jpg/03/14/82/97/360_F_314829742_9J8iuJIH1vuz6Fa7RVb9xokmLGRGreMr.jpg" alt="Creative Background" />
+    <div class="text-on-image">Creativity Meets Code</div>
+  </section>
+
+  <!-- Two-column Layout -->
+  <section class="two-columns">
+    <div class="column">Column 1: Passion for clean code and design.</div>
+    <div class="column">Column 2: Always learning and improving!</div>
+  </section>
+
+  <!-- Paragraph Hover Effect -->
+  <section class="hover-text">
+    <p>Hover over me to see the effect!</p>
+  </section>
+
+  <!-- Image Overlay Fade -->
+  <section class="overlay-fade">
+    <div class="img-container">
+      <img src="https://st2.depositphotos.com/1000423/5535/i/450/depositphotos_55352715-stock-illustration-creative-ideas.jpg" alt="Overlay Image" />
+      <div class="fade-overlay">Hover for fade</div>
+    </div>
+  </section>
+
+  <!-- Autoplay Video -->
+  <section class="video-section">
+    <video autoplay muted loop>
+      <source src="https://cdn.pixabay.com/video/2017/07/23/10824-226624979_tiny.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Video with Text Overlay -->
+  <section class="video-text-overlay">
+    <video autoplay muted loop class="bg-video">
+      <source src="https://cdn.pixabay.com/video/2017/07/23/10824-226624979_tiny.mp4" type="video/mp4" />
+    </video>
+    <div class="video-text">Welcome to My Porfolio</div>
+  </section>
+
+<section id="contact" style="padding: 40px;">
+  <h2 style="text-align:center; color:#299;">Contact Me</h2>
+  <form action="#" method="POST" class="contact-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Your name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="you@example.com" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" name="phone" placeholder="123-456-7890" />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message here..."></textarea>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Portfolio. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
